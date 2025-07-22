@@ -1,27 +1,27 @@
 # DeltaFrame Pro
 
-**DeltaFrame Pro** is a comprehensive, open-source, full-stack crypto order book and trading simulation platform. While it is not a finished product or a professional trading tool, it serves as a robust learning sandbox—a place to explore, experiment, and grow as a full-stack developer with a focus on fintech. The project is a living record of iterative improvement, technical curiosity, and the pursuit of best practices in both backend and frontend engineering.
+Welcome to **DeltaFrame Pro**—my open-source, full-stack crypto order book and trading simulation playground. This isn’t a finished product or a professional tool. It’s just my little corner of the internet where I try to figure out how fintech works, break things, and (hopefully) learn something in the process.
 
-> TL;DR: DeltaFrame Pro is not a commercial product or a trading tool. It is a continuously evolving, chaos-driven learning project that has become cleaner, smarter, and more modular over time. The "Pro" in the name reflects a new level of polish, structure, and ambition.
+> TL;DR: This is not a product. It’s not even a tool. It’s a chaotic, ever-changing project that’s grown up a bit since the first version. The "Pro" is mostly a joke, but I am trying to make things cleaner and more useful as I go.
 
 ---
 
 ## Why DeltaFrame Pro?
 
-DeltaFrame Pro marks a new chapter in my development journey. The original **DeltaFrame** project was a playground for learning the basics of order book visualization, trade simulation, and data persistence. With DeltaFrame Pro, the focus has shifted to building a more maintainable, modular, and user-friendly application. This version introduces a higher standard for UI/UX, code organization, and feature completeness, while still embracing the "fuck around and find out" (FAFO) philosophy that made the original so valuable as a learning tool.
+So, why a "Pro" version? Honestly, the original [DeltaFrame](https://github.com/vedang-patil-23/DeltaFrame) was a mess, but it taught me a ton. This new repo is my attempt to do things a little better: more modular code, a UI that doesn’t make my eyes bleed, and features that actually work. I’m still learning as I go, and this project is my way of keeping myself honest (and maybe helping someone else who’s on the same journey).
 
 ---
 
 ## Project Philosophy
 
-DeltaFrame Pro is built on the FAFO model—_"fuck around and find out"_. This means that every feature, refactor, and architectural decision is the result of hands-on experimentation, learning from mistakes, and iterating toward better solutions. The project is a journal of technical growth, documenting the transition from quick hacks to thoughtful, scalable engineering. Every part of the app has been broken and rebuilt at least once, and each cycle has brought new insights into both the technology and the user experience.
+I build by the FAFO model—_"fuck around and find out"_. That means I don’t always know what I’m doing, but I try, break stuff, and then try again. Every feature here is the result of me getting stuck, googling a lot, and then finally figuring it out (or giving up and coming back later).
 
 ---
 
 ## What’s New in DeltaFrame Pro
 
 ### 1. Sidebar Navigation
-The application now features a modern, persistent sidebar that provides quick access to all major pages: **Dashboard**, **Portfolio**, **Order Book**, **About**, and **Settings**. Each page is clearly labeled and accompanied by an icon for intuitive navigation. The sidebar can be collapsed to maximize workspace, and the active page is always highlighted for clarity. This navigation overhaul makes the app feel more like a professional platform and less like a prototype.
+I finally got tired of clicking through a single, ugly page. Now there’s a sidebar! You can jump between Dashboard, Portfolio, Order Book, About, and Settings. It even collapses if you want more space. The active page is highlighted so you don’t get lost (like I used to).
 
 ### 2. Modular Pages
 DeltaFrame Pro is organized into distinct, modular pages:
@@ -32,9 +32,9 @@ DeltaFrame Pro is organized into distinct, modular pages:
 - **Settings:** Centralizes user preferences, including the theme toggle and logout placeholder, and is designed to accommodate future customization options.
 
 ### 3. Theme & Appearance
-- The theme toggle has been moved to the sidebar’s footer for consistent access across all pages.
-- The app respects system preferences for light or dark mode and remembers the user’s choice for future visits.
-- The UI is designed to be clean, minimal, and responsive, ensuring a pleasant experience on both desktop and mobile devices.
+- Theme toggle is now in the sidebar footer. I kept forgetting where it was, so now it’s always there.
+- The app remembers your theme and respects your system preference. No more blinding yourself at 2am.
+- The UI is a lot less ugly. It’s not perfect, but it’s way better than my first try.
 
 ### 4. Defensive UX & Stability
 - DeltaFrame Pro is engineered to never crash or go blank, even in the face of bad or missing data.
@@ -42,10 +42,10 @@ DeltaFrame Pro is organized into distinct, modular pages:
 - Placeholder content and user guidance are provided throughout the app, making it easy to understand what actions are available or required at any time.
 
 ### 5. Trading & Portfolio Enhancements
-- The hybrid P&L engine calculates real-time profit and loss on the frontend and verifies it against backend data, logging any discrepancies for review.
-- The tradebook modal allows users to view their entire trade history in a sortable and filterable table, supporting deeper analysis and transparency.
-- Holdings are dynamically derived from trade history, eliminating redundant tables and ensuring data consistency.
-- A "Reset Portfolio" feature enables users to quickly wipe their simulated trading data and start fresh, supporting iterative learning and experimentation.
+- The P&L engine is "hybrid": the frontend calculates it live, but the backend double-checks it. If they disagree, you’ll see a log (and I’ll probably learn something new).
+- There’s a tradebook modal so you can see all your trades in one place. You can sort and filter it, too.
+- Holdings are calculated from trade history, so there’s no redundant data. It’s cleaner and less buggy.
+- You can reset your portfolio with one click. I do this a lot when I break things.
 
 ### 6. Charting & Market Visuals
 - Highcharts integration provides advanced charting capabilities, including candlestick, line, and area charts with zoom, pan, and export options (PNG, SVG, PDF, CSV).
@@ -88,14 +88,14 @@ The following table summarizes the core features of DeltaFrame Pro and their key
 
 ## Previous Projects
 
-DeltaFrame Pro builds on a series of earlier experiments, each of which contributed to the current architecture and feature set:
+This isn’t my first rodeo. Here’s how I got here:
 
-1. [orderbook-viewer](https://github.com/vedang-patil-23/orderbook-viewer) – The very first, raw implementation, focused on basic order book visualization.
-2. [orderbook-explorer](https://github.com/vedang-patil-23/orderbook-explorer) – Added more data sources and deeper order book analysis.
-3. [orderbook-vision](https://github.com/vedang-patil-23/orderbook-vision) – Focused on UI prototyping and user experience improvements.
-4. [DeltaFrame](https://github.com/vedang-patil-23/DeltaFrame) – The original base for DeltaFrame Pro, where the FAFO philosophy was first fully embraced.
+1. [orderbook-viewer](https://github.com/vedang-patil-23/orderbook-viewer) – My first attempt. It was rough, but it worked (sort of).
+2. [orderbook-explorer](https://github.com/vedang-patil-23/orderbook-explorer) – Added more data and tried to make sense of it all.
+3. [orderbook-vision](https://github.com/vedang-patil-23/orderbook-vision) – Focused on making things look better (and learned a lot about UI).
+4. [DeltaFrame](https://github.com/vedang-patil-23/DeltaFrame) – The original base for DeltaFrame Pro. This is where I really started to "FAFO".
 
-Each project represents a distinct chapter of trial, error, and learning, culminating in the more mature and feature-rich DeltaFrame Pro.
+Each project was a step forward, even if it didn’t feel like it at the time.
 
 ---
 
@@ -133,6 +133,6 @@ DeltaFrame Pro is released under the MIT License and is intended for learning an
 
 ## Final Thoughts
 
-DeltaFrame Pro is not a finished product, but a living checkpoint in my journey as a developer. It is a testament to the value of learning in public, embracing chaos, and iterating toward better solutions. If you have feedback, suggestions, or want to discuss fintech, trading systems, or software engineering, please feel free to reach out or open an issue.
+DeltaFrame Pro is not a finished product. It’s just a checkpoint in my journey as a developer and a way to keep myself accountable. I’m still learning, still breaking things, and still having fun. If you have feedback, ideas, or just want to talk about fintech, trading, or coding, feel free to reach out.
 
-**Thank you for exploring DeltaFrame Pro.** The journey continues, and each iteration brings new lessons and improvements. Stay tuned for more updates and features as the project evolves. 
+**Thanks for checking out DeltaFrame Pro.** Here’s to more chaos, more learning, and (hopefully) fewer bugs next time! 
