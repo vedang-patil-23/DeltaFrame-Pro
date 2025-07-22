@@ -8,7 +8,7 @@ Welcome to **DeltaFrame Pro**—my open-source, full-stack crypto order book and
 
 ## Why DeltaFrame Pro?
 
-So, why a "Pro" version? Honestly, the original [DeltaFrame](https://github.com/vedang-patil-23/DeltaFrame) was a mess, but it taught me a ton. This new repo is my attempt to do things a little better: more modular code, a UI that doesn’t make my eyes bleed, and features that actually work. I’m still learning as I go, and this project is my way of keeping myself honest (and maybe helping someone else who’s on the same journey).
+So, why a "Pro" version? Honestly, the original [DeltaFrame](https://github.com/vedang-patil-23/DeltaFrame) was a mess in UI, but it taught me a ton. This new repo is my attempt to do things a little better: more modular code, a UI that doesn’t make my eyes bleed, and features that actually work. I’m still learning as I go, and this project is my way of keeping myself honest (and maybe helping someone else who’s on the same journey).
 
 ---
 
