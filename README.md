@@ -1,151 +1,130 @@
 # DeltaFrame Pro
 
-**DeltaFrame Pro** is an open-source, full-stack crypto order book and trading simulation platform. It is a sandbox for learning, experimenting, and chronicling a journey through fintech and full-stack development. This is not a finished product or a professional trading tool—it's a living, evolving project that embodies the FAFO ("fuck around and find out") philosophy.
+**DeltaFrame Pro** is an open-source, full-stack crypto order book and trading simulation platform. It's not a finished product or a professional trading tool—it’s a learning sandbox. A place where I explore, experiment, and grow as a full-stack developer with a focus on fintech.
 
-> TL;DR: Not a product. Not a tool. Just a chaotic fintech project (still under development) that taught me more than any tutorial ever could.
-
----
-
-## 🚀 Project Philosophy & Background
-
-DeltaFrame Pro is built on the principle of learning by doing. Instead of following tutorials, every feature and refactor is the result of building, breaking, and iterating. The project has evolved from simple CSV-based storage to a robust, real-time, full-stack simulation platform.
-
-### Key Milestones
-- **CSV to SQLite:** Migrated from CSVs to SQLite with Sequelize for scalable, transactional data modeling.
-- **Dynamic Holdings:** Removed the static `Holdings` table; holdings are now computed live from trade history for accuracy and consistency.
-- **Hybrid P&L Engine:** The frontend calculates live P&L, but always verifies it against the backend (SQLite) as the source of truth. Any mismatches are logged and viewable in a modal for transparency.
-- **Minimal, Resilient UI:** The UI is intentionally minimal and defensive. The backend and core logic are prioritized; polish is added as the project matures.
-- **Modular, Modern Frontend:** Refactored into modular React components for maintainability and scalability.
-- **About Page & Navigation:** Added a detailed About page and improved sidebar navigation for a more professional, user-friendly experience.
-- **Theme Support:** Light and dark mode with persistent user preference.
-- **Error Handling:** Defensive UX—app never crashes or goes blank, even with bad/missing data.
+> TL;DR: Still not a product. Still not a tool. Just a chaos-driven learning project that’s gotten cleaner, smarter, and a bit more serious—with a name to match.
 
 ---
 
-## 🖥️ App Screenshots
+## Why DeltaFrame Pro?
+
+This is a new version, split into a separate repo to mark a new chapter. The original **DeltaFrame** taught me a ton, but **DeltaFrame Pro** represents a more focused push toward UI/UX quality, modular architecture, and thoughtful feature design—while keeping the FAFO spirit alive.
+
+---
+
+## Project Philosophy
+
+Built on the FAFO model — _"fuck around and find out"_ — this project is a journal of learning by doing. I’ve broken and rebuilt nearly every part of this app, and each iteration taught me something new.
+
+---
+
+## What’s New in DeltaFrame Pro
+
+### 1. Sidebar Navigation
+- Modern, persistent sidebar with icon-labeled pages: **Dashboard**, **Portfolio**, **Order Book**, **About**, and **Settings**
+- Collapsible for focus, with active page highlighting
+
+### 2. Modular Pages
+- **Dashboard:** Unified landing page with live market view, trading panel, and P&L
+- **Portfolio:** Deep dive into holdings, allocation, and trade insights
+- **Order Book:** Full-screen view of the order book and depth chart
+- **About:** Explains project intent, FAFO method, and development journey
+- **Settings:** Houses theme toggle, logout placeholder, and user preferences
+
+### 3. Theme & Appearance
+- **Sidebar Theme Toggle:** Moved to the sidebar’s footer for consistency
+- **Persistent & Responsive:** Respects system preferences, remembers your theme
+- **Clean & Responsive UI:** Mobile-friendly, accessible, minimal
+
+### 4. Defensive UX & Stability
+- No crash policy: UI doesn’t break on bad/missing data
+- Helpful placeholder content and user guidance
+- All errors are caught and shown with clarity, not cryptic stack traces
+
+### 5. Trading & Portfolio Enhancements
+- **Hybrid P&L Engine:** Real-time frontend P&L verified by backend
+- **Tradebook Modal:** Full trade history, sortable/filterable
+- **Dynamic Holdings:** Derived from trade history—no redundant tables
+- **Reset Portfolio:** One-click wipe to restart your sim-trading journey
+
+### 6. Charting & Market Visuals
+- Highcharts integration with candlestick, line, and area modes
+- Export options (PNG, SVG, PDF, CSV)
+- **Depth Chart** and **Order Book Imbalance**: Visual cues for market depth
+
+### 7. Technical & Architectural Upgrades
+- Modular React components for each page
+- Clean separation of frontend (React + Vite) and backend (Node.js + Express + Sequelize)
+- SQLite database with refactored schema and improved integrity
+- Expanded API: `exchanges`, `symbols`, `orderbook`, `trades`, `holdings`, `balance`, `ticker`, `snapshots`
+
+---
+
+## Screenshots
 
 ![DeltaFrame Pro Screenshot](frontend/src/assets/img.png)
-
-*Features shown: live order book, simulated buy/sell panel, holdings tracker, backend-verified P&L, About page, and more.*
-
----
-
-## 🌟 Features (2024)
-
-### Live Order Book
-- Real-time order book data from supported **CCXT** exchanges and trading pairs.
-- Manual fetch (user must click "Fetch") and continuous polling mode.
-- Active symbol detection and filtering (USDT, USD, BTC pairs prioritized).
-- Placeholder UI when no data is loaded.
-
-### Interactive Charting
-- Candlestick, line, and area charts via **Highcharts**.
-- Zoom, pan, export (PNG, SVG, PDF, CSV), and OHLCV tooltips.
-- Fully responsive and supports light/dark mode.
-- Depth chart and order book imbalance visualization.
-
-### Trading Simulation
-- Simulate buy/sell trades, tracked and persisted via SQLite.
-- Holdings are computed on-the-fly from trade history.
-- Buy/sell panel and cash balance always visible.
-- Defensive checks for sufficient funds/holdings.
-
-### Portfolio & P&L
-- View holdings, trade history, and unrealized P&L live.
-- **Hybrid P&L:** Frontend shows live P&L, backend verifies it.
-- All desyncs are logged and viewable in a modal.
-- Portfolio stats (cash, value, trades) are prominently displayed.
-- Pie and bar charts for asset allocation and trade analytics.
-
-### Tradebook & Reset
-- Tradebook modal: view all trades in a sortable, filterable table.
-- "Reset Portfolio" button for quick sandbox resets.
-
-### Sidebar Navigation & About Page
-- Sidebar with icons for Dashboard, Portfolio, Order Book, About, and Settings.
-- About page: detailed project background, FAFO philosophy, and future roadmap.
-- Theme toggle and logout in sidebar footer.
-
-### Defensive UX & Error Handling
-- Helpful error messages and placeholder content throughout.
-- App won’t crash or go blank—even with bad/missing data.
-- All API/network errors are gracefully handled and surfaced to the user.
-
-### Minimal, Purpose-Driven UI
-- Clean, responsive design focused on function first.
-- Placeholder content guides users (e.g., “Click Fetch…”).
-- Design polish and accessibility improvements ongoing.
-
-### Theme & Accessibility
-- Light and dark mode with persistent user preference.
-- Responsive layout for desktop and mobile.
-- Keyboard and screen reader accessible components.
+*A cleaner, more structured version of the original vision. Live order book, simulated trades, verified P&L—all in one place.*
 
 ---
 
-## 🛠️ Technical Overview
+## Features Overview
 
-| Layer     | Tech Stack                                   |
-|-----------|----------------------------------------------|
-| Frontend  | React (Vite), Highcharts, modern CSS, HTML   |
-| Backend   | Node.js, Express, Sequelize, SQLite, CCXT    |
-
-- **Data Flow:**
-  - Backend: Fetches live market data via **CCXT**, handles trades and balance storage, computes holdings and P&L.
-  - Frontend: Displays charts, order book, trading UI, portfolio, and analytics.
-- **Database Design:**
-  - Tables: `Trades` and `Balance` (no static `Holdings` table).
-  - Holdings and P&L are computed dynamically from trade history.
-- **API Endpoints:**
-  - `/api/exchanges`, `/api/symbols`, `/api/orderbook`, `/api/trades`, `/api/holdings`, `/api/balance`, `/api/ticker`, `/api/snapshots`, etc.
+| Feature                | Details                                                                 |
+|------------------------|-------------------------------------------------------------------------|
+| **Live Order Book**     | Real-time from CCXT, with depth and imbalance charts                   |
+| **Interactive Charts**  | Candlestick, zoom/pan, export, light/dark mode                         |
+| **Trading Simulation**  | Buy/sell with real-time feedback, state stored in SQLite               |
+| **Dynamic Holdings**    | Recomputed from trade history for consistency                          |
+| **Verified P&L**        | Frontend vs backend mismatch detection                                 |
+| **Sidebar Navigation**  | Modular page layout with clear structure and focus                     |
+| **Error Handling**      | Defensive UI—no crashes, no blanks                                     |
+| **Responsive UI**       | Works well on all screen sizes; accessible design                      |
 
 ---
 
-## 🧭 Navigation & UI Structure
+## Previous Projects
 
-- **Dashboard:**
-  - Main landing page with order book, controls, charts, and portfolio summary.
-- **Portfolio:**
-  - Detailed view of holdings, asset allocation, and trade analytics.
-- **Order Book:**
-  - Full-screen order book and depth chart with recent trades.
-- **About:**
-  - Project background, FAFO philosophy, and future roadmap.
-- **Settings:**
-  - Theme toggle and (future) user preferences.
+Each iteration got me closer to something usable and educational:
+
+1. [orderbook-viewer](https://github.com/vedang-patil-23/orderbook-viewer) – very early raw implementation
+2. [orderbook-explorer](https://github.com/vedang-patil-23/orderbook-explorer) – more data and depth
+3. [orderbook-vision](https://github.com/vedang-patil-23/orderbook-vision) – focused on UI prototyping
+4. [DeltaFrame](https://github.com/vedang-patil-23/DeltaFrame) – the original base for DeltaFrame Pro
 
 ---
 
-## 🗺️ Roadmap & Future Developments
+## Getting Started
 
-- Link to a real trading sandbox (e.g., Binance Testnet) for live simulated trading
-- Advanced charting (indicators, overlays, drawing tools)
-- Real-time WebSocket order book updates
-- Support for more exchanges and asset types (stocks, forex, etc.)
-- Mobile-friendly and responsive redesign
-- Comprehensive trade analytics and performance metrics
-- Multi-user support with authentication and separate portfolios
-- Automated trading bots and strategy backtesting
-- In-app tutorials and guided learning modules
-- More robust error logging and analytics
+1. **Install dependencies** (in both frontend and backend):
+   ```bash
+   npm install
+```
 
----
-
-## 🏁 Getting Started
-
-1. **Install dependencies in both backend and frontend:**
-   - `npm install` (in both `backend` and `frontend` directories)
 2. **Start the backend:**
-   - `cd backend && npm run dev` (or `node index.js`)
+
+   ```bash
+   cd backend && npm run dev
+   ```
+
 3. **Start the frontend:**
-   - `cd frontend && npm run dev`
-4. **Open** [http://localhost:5173](http://localhost:5173) **in your browser.**
+
+   ```bash
+   cd frontend && npm run dev
+   ```
+
+4. **Visit the app:**
+   Open [http://localhost:5173](http://localhost:5173) in your browser
 
 ---
 
-## 📜 License
-MIT (for learning and non-commercial use)
+## License
+
+MIT — for learning and non-commercial use
 
 ---
 
-**Thank you for exploring DeltaFrame Pro. If you have feedback, suggestions, or want to share your own learning journey, please reach out. This project is a work in progress, and so am I.** 
+## Final Thoughts
+
+This project isn't a product—it's a checkpoint. A growing, chaotic, and honest representation of learning in public. If you’ve got feedback, ideas, or just want to chat fintech and dev journeys, feel free to reach out.
+
+**Thanks for exploring DeltaFrame Pro.** Onward to the next iteration. 
